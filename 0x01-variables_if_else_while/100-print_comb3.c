@@ -16,7 +16,7 @@ int main(void)
 	{
 	for (n = '0' ; n <= '9' ; n++)
 	{
-	if (i == '0' && n == '0')
+	if ((i == '0' && n == '0')||( i > n))
 	{
 	continue;
 	}
