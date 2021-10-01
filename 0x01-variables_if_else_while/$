@@ -5,7 +5,7 @@
 
 /**
  * main - This function is used to compare the last number to 5.
- * Return: 0
+ * return: 0
  */
 int main(void)
 {
