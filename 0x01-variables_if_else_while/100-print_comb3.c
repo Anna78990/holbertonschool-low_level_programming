@@ -16,6 +16,10 @@ int main(void)
 	{
 	for (n = '0' ; n <= '9' ; n++)
 	{
+	if (i == '0' && n == '0')
+	{
+	continue;
+	}
 	putchar(i);
 	putchar(n);
 	if (i == '9' && n == '9')
