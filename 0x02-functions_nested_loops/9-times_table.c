@@ -32,6 +32,10 @@ void times_table(void)
 		}
 		_putchar(',');
 		_putchar(' ');
+		if (((f == 2) && (s >= 4)) || ((f == 3) && (s >= 3)) || ((f == 4) && (s >= 2)) || ((f >= 5) && (s >= 1)))
+		{
+		continue;
+		}
 		_putchar(' ');
 	}
 		_putchar('\n');
