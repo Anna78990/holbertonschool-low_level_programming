@@ -18,7 +18,7 @@ void rev_string(char *s)
 	for (i = 0 ; s[i] != '\0' ; i++)
 	;
 	i--;
-	size = i;
+	size = i;//これ書かないと上のループに干渉しちゃう。
 	for (n = 0 ; n <= size / 2 ; n++)
 	{
 	c = s[i];
