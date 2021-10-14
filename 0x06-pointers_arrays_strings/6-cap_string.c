@@ -17,6 +17,10 @@ char *cap_string(char *c)
 
 	for (size = 0; c[size] != '\0'; size++)
 	;
+	if(c[0] >= 97 && c[0] <= 122)
+	{
+	c[0] -= 32;
+	}
 	for (i = 1, mi = i - 1; i < size; i++, mi++)
 	{
 		if ((c[mi] == ' ' || c[mi] == ',' || c[mi] == ';' ||
@@ -27,6 +31,7 @@ char *cap_string(char *c)
 			c[i] -= 32;
 		}
 	}
+	
 	printf("%d %d %d", i, mi, size);
 	return (c);
 }
