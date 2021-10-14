@@ -6,17 +6,18 @@
 /**
 * *string_toupper - changes all lowercase letters of a string to uppercase.
 * @c: string
-* Return: (ch)
+* Return: (c)
 */
 
 char *string_toupper(char *c)
 {
 	int i;
 	int size;
+	size = sizeof(c);
 
-	for (i = 0, size = sizeof(c) ; i <= size; i++)
+	for (i = 0; i <= size; i++)
 	{
-	toupper(c[i]);
+	c[i] = toupper(c[i]);
 	}
 	
 	return (c);
