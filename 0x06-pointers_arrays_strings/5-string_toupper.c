@@ -14,12 +14,13 @@ char *string_toupper(char *c)
 	int i;
 	int size;
 
-	size = sizeof(c);
-	for (i = 0; i <= size; i++)
+	for (size = 0; c[size] != '\0'; size++)
+	;
+	for (i = 0; i < size; i++)
 	{
-		if((c[i] >= 97) && (c[i] <= 122))
+		if ((c[i] >= 97) && (c[i] <= 122)) 
 		{
-		c[i] -= 32;
+			c[i] -= 32;
 		}
 	}
 	return (c);
