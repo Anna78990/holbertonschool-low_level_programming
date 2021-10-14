@@ -20,11 +20,5 @@ void reverse_array(int *a, int n)
 		c = a[i];
 		a[i] = a[k];
 		a[k] = c;
-
-		if (k != (n - 1))
-		{
-			printf(", ");
-		}
-	printf("%d", c);
 	}
 }
