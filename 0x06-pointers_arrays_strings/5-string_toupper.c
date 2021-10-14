@@ -15,9 +15,12 @@ char *string_toupper(char *c)
 	int size;
 
 	size = sizeof(c);
-	for (i = 0; i <= (size - 1); i++)
+	for (i = 0; i <= size; i++)
 	{
-	c[i] = toupper(c[i]);
+		if((c[i] >= 97) && (c[i] <= 122))
+		{
+		c[i] -= 32;
+		}
 	}
 	return (c);
 }
