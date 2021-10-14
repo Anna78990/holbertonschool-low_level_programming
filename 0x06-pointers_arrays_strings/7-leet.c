@@ -33,4 +33,4 @@ char *leet(char *c)
 		}
 	}
 	return (c);
-c[i] = num[i];}
+}
