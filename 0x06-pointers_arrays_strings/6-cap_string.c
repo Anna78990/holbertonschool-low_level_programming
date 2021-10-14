@@ -21,8 +21,9 @@ char *cap_string(char *c)
 	{
 	c[0] -= 32;
 	}
-	for (i = 1, mi = i - 1; i < size; i++, mi++)
+	for (i = 1; i < size; i++)
 	{
+		mi = i - 1;
 		if ((c[mi] == ' ' || c[mi] == ',' || c[mi] == ';' ||
 		c[mi] == '.' || c[mi] == '!' || c[mi] == '?' || c[mi] == '"' ||
 		c[mi] == '(' || c[mi] == ')' || c[mi] == '{' || c[mi] == '}' ||
@@ -32,6 +33,5 @@ char *cap_string(char *c)
 		}
 	}
 	
-	printf("%d %d %d", i, mi, size);
 	return (c);
 }
