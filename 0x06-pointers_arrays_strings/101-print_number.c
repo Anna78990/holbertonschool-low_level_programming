@@ -12,8 +12,8 @@
 
 void print_number(int n)
 {
-	int div;
-	int ab;
+	unsigned int div;
+	unsigned int ab;
 
 	div = 1;
 	if (n == 0)
@@ -29,7 +29,7 @@ void print_number(int n)
 	{
 		div *= 10;
 	}
-	while (ab >= 1)
+	while (div > 0)
 	{
 		_putchar((ab / div) + '0');
 		ab %= div;
