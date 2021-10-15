@@ -19,7 +19,7 @@ char *rot13(char *c)
 
 	alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	alphao = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
-	len = strlen(c);
+	len = sizeof(c);
 	for (i = 0; i <= len; i++)
 	{
 		for (n = 0; n < 52 ; n++)
