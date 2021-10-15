@@ -11,7 +11,6 @@
 
 char *rot13(char *c)
 {
-	int len;
 	int i;
 	char *alpha;
 	char *alphao;
@@ -19,14 +18,14 @@ char *rot13(char *c)
 
 	alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	alphao = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
-	len = sizeof(c);
-	for (i = 0; i <= len; i++)
+	for (i = 0; c[i]; i++)
 	{
-		for (n = 0; n < 52 ; n++)
+		for (n = 0; alpha[n] ; n++)
 		{
 			if (c[i] == alpha[n])
 			{
 				c[i] = alphao[n];
+				break;
 			}
 		}
 	}
