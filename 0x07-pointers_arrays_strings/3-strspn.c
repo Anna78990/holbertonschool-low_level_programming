@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 /**
- * *_strchr - locates a character in a string
+ * _strspn - locates a character in a string
  * @s: pointer to the string
  * @accept: character to search
  * Return: (n)
