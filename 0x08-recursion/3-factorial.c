@@ -3,7 +3,7 @@
 /**
  * factorial - returns the factorial of a given number.
  * @n: number to factorial
- * Return: (i)(i + _strlen_recursion(s))
+ * Return: (n * factorial(n - 1)(n)(O)(-1)
  */
 
 int factorial(int n)
