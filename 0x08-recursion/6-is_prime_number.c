@@ -3,7 +3,7 @@
 /**
  * is_prime_number - return 1 if it is a prime number,
  * @n: value to check
- * Return: (1)(x)(-1)
+ * Return: (0)(prime(2, n))
  */
 
 int is_prime_number(int n)
@@ -17,6 +17,13 @@ int is_prime_number(int n)
 		return (prime(2, n));
 	}
 }
+
+/**
+ * prime - for the loop to check
+ * @i: incrementation of loop
+ * @N: n
+ * Return: (0)(1)(prime(i + 1, N))
+*/
 
 int prime(int i, int N)
 {
