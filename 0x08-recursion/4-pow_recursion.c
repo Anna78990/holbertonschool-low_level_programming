@@ -4,7 +4,7 @@
  * _pow_recursion - returns the value of power
  * @x: value to power
  * @y: times to power
- * Return: (i)(i + _strlen_recursion(s))
+ * Return: (1)(x)(-1)
  */
 
 int _pow_recursion(int x, int y)
