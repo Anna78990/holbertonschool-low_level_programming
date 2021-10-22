@@ -16,9 +16,15 @@ int main(int argc, char *argv[])
 	int ad;
 	(void) argc;
 
-	k = 0;
+	k = 1;
 	i = 0;
 	ad = 0;
+
+	if (argc == 1)
+	{
+		printf("0\n");
+		return 0;
+	}
 	for (; argv[k]; k++)
 	{
 		for (; argv[k][i]; i++)
@@ -29,13 +35,8 @@ int main(int argc, char *argv[])
 					return 1;
 				}
 			}
-		if (k == 1 && argv[k][i] == '\0')
-			{
-				printf("0\n");
-				return 0;
-			}
 		ad += atoi(argv[k]);
 	}
-	printf("%d",ad);
+	printf("%d\n",ad);
 	return 0;
 }
