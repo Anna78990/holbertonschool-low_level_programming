@@ -2,8 +2,9 @@
 #include <stdlib.h>
 
 /**
- * *_strdup - returns a pointer to a newly allocated space
- * str: string given
+ * *str_concat -  concatenates two strings
+ * @s1 : first string
+ * @s2 : second string
  * Return: (NULL)(ch)
  */
 
@@ -15,30 +16,54 @@ char *str_concat(char *s1, char *s2)
 	int size;
 	int len;
 
-	size = count(s);
-	len = count(s2);
-	ch = (char *)malloc(sizeof(char) * (size + len));
-		if (ch == NULL)
-			return (NULL);
-		else{
-		for (i = 0; s1[i] != '\0'; i++)
-		{	
-			if (s1[0] != '\0')
-			{
-			ch[0] = "";
-			break;
-			}
-			ch[i] = s1[i];
-		}
-		for (n = 0; s2[n] != '\0'; n++, i++)
+	size = ch_count(s1);
+	len = ch_count(s2);
+		if (s1 == NULL || s2 == NULL)
 		{
-			if (s2[0] != '\0')
-			{
-				ch[i] = "";
-				break;
-			}
-			ch[i] = s2[n];
+			return (NULL);
 		}
-	return (ch);
-	}
+		else
+		{
+			ch = (char *)malloc(sizeof(char) * (size + len));
+			if (s1[0] == '\0')
+				ch[0] = '\0';
+			else
+			{
+				for (i = 0; s1[i] != '\0'; i++)
+				{
+					ch[i] = s1[i];
+				}
+			}
+			if (s2[0] == '\0')
+			{
+				if (s1[0] == '\0')
+					ch[1] = '\0';
+				else
+				ch[i] = '\0';
+			}
+			else
+			{
+				for (n = 0; s2[n] != '\0'; n++, i++)
+				{
+					ch[i] = s2[n];
+				}
+			}
+			return (ch);
+		}
+}
+
+/**
+ * ch_count - count the number of characters
+ * @cha: string given
+ * Return: (n)
+ */
+
+int ch_count(char *cha)
+{
+	int n;
+
+	for (n = 0; cha[n] != '\0'; n++)
+		;
+	n += 1;
+	return (n);
 }
