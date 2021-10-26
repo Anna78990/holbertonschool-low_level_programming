@@ -18,14 +18,9 @@ char *str_concat(char *s1, char *s2)
 
 	size = ch_count(s1);
 	len = ch_count(s2);
-		if (s1 == NULL || s2 == NULL)
-		{
-			return (NULL);
-		}
-		else
-		{
+
 			ch = (char *)malloc(sizeof(char) * (size + len));
-			if (s1[0] == '\0')
+			if (s1 == NULL || s1[0] == '\0')
 				ch[0] = '\0';
 			else
 			{
@@ -34,9 +29,9 @@ char *str_concat(char *s1, char *s2)
 					ch[i] = s1[i];
 				}
 			}
-			if (s2[0] == '\0')
+			if (s2 == NULL || s2[0] == '\0')
 			{
-				if (s1[0] == '\0')
+				if (s1 == NULL || s1[0] == '\0')
 					ch[1] = '\0';
 				else
 				ch[i] = '\0';
@@ -49,7 +44,7 @@ char *str_concat(char *s1, char *s2)
 				}
 			}
 			return (ch);
-		}
+		
 }
 
 /**
