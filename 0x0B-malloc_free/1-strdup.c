@@ -33,7 +33,7 @@ char *_strdup(char *str)
 }
 
 /**
- * count : to count
+ * count - count the number of characters
  * @cha: string given
  * Return: (n)
  */
