@@ -3,7 +3,7 @@
 
 /**
  * *_strdup - returns a pointer to a newly allocated space
- * str: string given
+ * @str: string given
  * Return: (NULL)(ch)
  */
 
@@ -31,6 +31,12 @@ char *_strdup(char *str)
 		return (ch);
 	}
 }
+
+/**
+ * count : to count
+ * @cha: string given
+ * Return: (n)
+ */
 
 int count(char *cha)
 {
