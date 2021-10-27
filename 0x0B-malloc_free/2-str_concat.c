@@ -19,12 +19,12 @@ char *str_concat(char *s1, char *s2)
 	if (s1 == NULL)
 		size = 0;
 	else
-		size = ch_count(s1) + 1;
+		size = ch_count(s1);
 	if (s2 == NULL)
 		len = 0;
 	else
-		len = ch_count(s2) + 1;
-	ch = (char *)malloc(sizeof(char) * (size + len));
+		len = ch_count(s2);
+	ch = (char *)malloc(sizeof(char) * (size + len + 1));
 	i = 0;
 	  if(ch != NULL)
 			{
