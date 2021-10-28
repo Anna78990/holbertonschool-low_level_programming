@@ -5,7 +5,7 @@
  * *string_nconcat -  concatenates two strings
  * @s1 : first string
  * @s2 : second string
- * @n : 
+ * @n : the number of bytes of s2
  * Return: (NULL)(ch)
  */
 
@@ -31,11 +31,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		if (n > len)
 		{
 			n = len;
-			return string_nconcat2(ch, s1, s2, size, n);
+			return (string_nconcat2(ch, s1, s2, size, n));
 		}
 		else
 		{
-			return string_nconcat2(ch, s1, s2, size, n);
+			return (string_nconcat2(ch, s1, s2, size, n));
 		}
 	}
 	else
@@ -58,18 +58,21 @@ int ch_count(char *cha)
 }
 
 /**
- * *string_nconcat -  concatenates two strings
+ * *string_nconcat2 -  concatenates two strings
+ * @ch : buffer
  * @s1 : first string
  * @s2 : second string
- * @n :
- * Return: (NULL)(ch)
+ * @size : length of s1
+ * @n : length of s2
+ * Return: (ch)
  */
 
-char *string_nconcat2(char *ch, char *s1, char *s2, unsigned int size, unsigned int n)
+char *string_nconcat2(char *ch, char *s1, char *s2,
+unsigned int size, unsigned int n)
 {
 	int i = 0;
 	unsigned int k;
-	
+
 	if (s1 == NULL || size == 0)
 		ch[0] = '\0';
 	else
