@@ -22,8 +22,8 @@ else
 	ar = malloc((d + 1) * sizeof(int));
 	if (ar == NULL)
 		return (NULL);
-	for (i = min; i <= max; i++)
-		ar[i] = i;
+	for (i = 0; min + i <= max ; i++)
+		ar[i] = min + i;
 	return (ar);
 }
 }
