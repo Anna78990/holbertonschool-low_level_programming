@@ -1,6 +1,8 @@
 #include "dog.h"
 #include <stddef.h>
 #include <stdlib.h>
+#include <stdio.h>
+
 /**
  * *new_dog - create a new dog structure* @name: name
  * @name: name
@@ -15,28 +17,18 @@ dog_t *new_dog(char *name, float age, char *owner)
 	char *n, *o;
 	int i, j;
 
-	d = malloc(sizeof(dog_t));
-	if (d == NULL)
-		return (NULL);
 	n = malloc((ch_count(name) + 1) * sizeof(char));
 	if (n == NULL)
-	{
-		free(d);
 		return (NULL);
-	}
 	else
 	{
 		for (i = 0; i <= ch_count(name); i++)
 			n[i] = name[i];
 	}
-	for (i = 0; i <= ch_count(name); i++)
-		n[i] = name[i];
-	n[i++] = '\0';
 	o = malloc((ch_count(owner) + 1) * sizeof(char));
 	if (o == NULL)
 	{
 		free(n);
-		free(d);
 		return (NULL);
 	}
 	else
@@ -44,14 +36,18 @@ dog_t *new_dog(char *name, float age, char *owner)
 		for (j = 0; j <= ch_count(owner); j++)
 			o[j] = owner[j];
 	}
-	for (j = 0; j <= ch_count(owner); j++)
-		o[j] = owner[j];
-	o[j++] = '\0';
+	d = malloc(sizeof(dog_t));
+	if (d == NULL)
+	{
+		free(n);
+		free(o);
+		return (NULL);
+	}
 	(*d).name = n;
 	(*d).age = age;
 	(*d).owner = o;
 	return (d);
-	}
+}
 /**
  * ch_count - count the number of characters
  * @cha: string given
