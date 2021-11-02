@@ -7,7 +7,7 @@
  * @name: name
  * @age: age
  * @owner: owner
- * Return: 
+ * Return: (NULL)(d)
  */
 
 dog_t *new_dog(char *name, float age, char *owner)
@@ -23,21 +23,17 @@ dog_t *new_dog(char *name, float age, char *owner)
 	n = malloc((ch_count(name) + 1) * sizeof(char));
 	if (n == NULL)
 		return (NULL);
-	else
-	{
-		for(i = 0; i < cn; i++)
-			n[i] = name[i];
-	}
+	for (i = 0; i < cn; i++)
+		n[i] = name[i];
+	n[i] = '\0';
 	(*d).name = n;
 	(*d).age = age;
 	o = malloc((ch_count(owner) + 1) * sizeof(char));
 	if (n == NULL)
 		return (NULL);
-	else
-	{
-		for(j = 0; j < co; j++)
-			o[j] = owner[j];
-	}
+	for (j = 0; j < co; j++)
+		o[j] = owner[j];
+	o[j] = '\0';
 	(*d).owner = o;
 
 	return (d);
