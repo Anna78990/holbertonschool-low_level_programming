@@ -19,7 +19,9 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	n = malloc((ch_count(name) + 1) * sizeof(char));
 	if (n == NULL)
+	{
 		return (NULL);
+	}
 	else
 	{
 		for (i = 0; i <= ch_count(name); i++)
