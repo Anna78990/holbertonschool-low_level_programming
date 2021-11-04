@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 		if ((*argv[2] == '+' || *argv[2] == '-' || *argv[2] == '*'
 			|| *argv[2] == '/' || *argv[2] == '%') && strlen(argv[2]) == 1)
 		{
-			if (*argv[3] == 0 && (*argv[2] == '/' || *argv[2] == '%'))
+			if ((*argv[2] == '/' || *argv[2] == '%') && *argv[3] == '0')
 			{
 			printf("Error\n");
 			exit(100);
