@@ -32,9 +32,14 @@ while (format && format[i] && i <= 9)
 		case 's':
 		s = va_arg(ap, char *);
 		if (s == NULL)
+		{
 			printf("(nil)");
+			s = "";
+		}
 		else
+		{
 			printf("%s", s);
+		}
 		break;
 		default:
 		continue;
