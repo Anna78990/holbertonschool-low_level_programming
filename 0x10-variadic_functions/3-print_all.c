@@ -42,7 +42,7 @@ while (format && format[i])
 		continue;
 	}
 	if (format[i])
-		printf(",");
+		printf(", ");
 }
 printf("\n");
 va_end(ap);
