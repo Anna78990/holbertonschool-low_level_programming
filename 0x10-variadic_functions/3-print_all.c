@@ -16,7 +16,7 @@ char *s;
 i = 0;
 va_start(ap, format);
 
-while (format && format[i])
+while (format && format[i] && i <= 9)
 {
 	switch (format[i++])
 	{
