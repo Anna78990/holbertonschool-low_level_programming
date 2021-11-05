@@ -3,23 +3,21 @@
 #include "variadic_functions.h"
 
 /**
- * sum_them_all - sum all of the arguments
+ * print_numbers - print number
+ * @separator: separator
  * @n: value of variadic argument
- * Return: 0 if its 0, sum otherwise
  */
 
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
-char *sep;
 unsigned int i;
 va_list ap;
 va_start(ap, n);
 
 if (separator == NULL)
 {
-sep = "";
 for (i = 0; i < n; i++)
-	printf("%d%s", va_arg(ap, unsigned int), sep);
+	printf("%d", va_arg(ap, unsigned int));
 }
 else
 for (i = 0; i < n; i++)
