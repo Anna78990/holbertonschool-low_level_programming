@@ -16,7 +16,7 @@ char *s;
 i = 0;
 va_start(ap, format);
 
-while (format && format[i] && i <= 9)
+while (format && format[i])
 {
 	switch (format[i++])
 	{
@@ -36,10 +36,7 @@ while (format && format[i] && i <= 9)
 			printf("(nil)");
 			s = "";
 		}
-		else
-		{
-			printf("%s", s);
-		}
+		printf("%s", s);
 		break;
 		default:
 		continue;
