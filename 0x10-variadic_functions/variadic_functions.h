@@ -1,0 +1,6 @@
+#ifndef ARIADIC_FUNCTIONS_H
+#define ARIADIC_FUNCTIONS_H
+
+int sum_them_all(const unsigned int n, ...);
+
+#endif
