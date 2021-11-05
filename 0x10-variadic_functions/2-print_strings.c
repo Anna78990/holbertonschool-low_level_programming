@@ -27,7 +27,7 @@ for (i = 0; i < n; i++)
 	p = va_arg(ap, char *);
 	if (p != NULL)
 		printf("%s", p);
-	else if (p == NULL && i != (n - 1))
+	else if (p == NULL)
 		printf("(nil)");
 	if (i != (n - 1))
 		printf("%s", separator);
