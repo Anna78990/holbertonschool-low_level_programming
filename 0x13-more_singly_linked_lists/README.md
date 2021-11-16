@@ -38,3 +38,8 @@ The function in this file returns the nth node of a listint_t linked list.
 Prototype: listint_t *get_nodeint_at_index(listint_t *head, unsigned int index);
 Return: the nth node, if it does not exist, return NULL.
 
+8-sum_listint.c
+The function in this file returns the sum of all the data (n) of a listint_t linked list
+Prototype: int sum_listint(listint_t *head);
+Return: the sum of all the data, if it is empty, return NULL.
+
