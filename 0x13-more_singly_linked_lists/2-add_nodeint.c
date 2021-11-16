@@ -4,7 +4,7 @@
 
 /**
  * add_nodeint - add a node to the begining
- * @head: null pointer
+ * @head: pointer to the list
  * @n: number in new element
  * Return: pointer to new element or NULL if it failed
  */
