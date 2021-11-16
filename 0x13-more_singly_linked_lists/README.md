@@ -22,3 +22,8 @@ Return: pointer to new element or NULL if it failed
 The function in this file free the linked lists
 Prototype: void free_listint(listint_t *head);
 Return : Always nothing
+
+5-free_listint2.c
+The function in this file free the linked lists and sets the head to NULL.
+Prototype: void free_listint2(listint_t **head);
+Return : Always nothing
