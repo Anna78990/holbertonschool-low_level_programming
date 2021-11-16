@@ -7,3 +7,9 @@ Return: the number of nodes
 The function in this file returns the number of elements in a linked listint_t list.
 Prototype: size_t listint_len(const listint_t *h);
 Return: the number of elements
+
+2-add_nodeint.c
+The function in this file add a node to the begining.
+Prototype: listint_t *add_nodeint(listint_t **head, const int n);
+Return: pointer to new element or NULL if it failed
+
