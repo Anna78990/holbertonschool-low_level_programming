@@ -13,3 +13,7 @@ The function in this file add a node to the begining.
 Prototype: listint_t *add_nodeint(listint_t **head, const int n);
 Return: pointer to new element or NULL if it failed
 
+3-add_nodeint_end.c
+The function in this file adds a new node at the end of a listint_t list.
+Prototype: listint_t *add_nodeint_end(listint_t **head, const int n);
+Return: pointer to new element or NULL if it failed
