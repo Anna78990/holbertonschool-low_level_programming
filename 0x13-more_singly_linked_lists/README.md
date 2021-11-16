@@ -29,8 +29,12 @@ Prototype: void free_listint2(listint_t **head);
 Return : Always nothing
 
 6-pop_listint.c 
-This function deletes the head node of a listint_t linked list and and returns the head node’s data (n).
+The function in this file deletes the head node of a listint_t linked list and returns the head node’s data (n).
 Prototype: int pop_listint(listint_t **head);
 Return: the element to delete, if it is empty 0.
 
+7-get_nodeint.c 
+The function in this file returns the nth node of a listint_t linked list.
+Prototype: listint_t *get_nodeint_at_index(listint_t *head, unsigned int index);
+Return: the nth node, if it does not exist, return NULL.
 
