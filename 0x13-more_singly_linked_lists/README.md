@@ -17,3 +17,8 @@ Return: pointer to new element or NULL if it failed
 The function in this file adds a new node at the end of a listint_t list.
 Prototype: listint_t *add_nodeint_end(listint_t **head, const int n);
 Return: pointer to new element or NULL if it failed
+
+4-free_listint.c
+The function in this file free the linked lists
+Prototype: void free_listint(listint_t *head);
+Return : Always nothing
