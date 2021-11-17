@@ -4,7 +4,7 @@
 
 
 /**
- * delete_nodeint_at_index - deletes the node at index 
+ * delete_nodeint_at_index - deletes the node at index
  * @head: pointer to the list
  * @index: n of nth node to be deleted
  * Return: 1 if it succeeded, -1 if it failed

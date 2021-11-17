@@ -56,3 +56,9 @@ Return: the sum of all the data, if it is empty, return NULL.
 The function in this file inserts a new node at a given position by the setting the pointer to the list on the 
 argument '*h', n of nth node ,which lead the new node, on'idx', umber in new element on 'n'
 Return: pointer to new element, if it failed or it is not possible to add the new node at index return NULL.
+
+10-delete_nodeint.c
+The function in this file deletes the node at index by the setting the pointer to the list on the argument '**head'
+, thec node index to delete (it starts at 0).
+Prototype: int delete_nodeint_at_index(listint_t **head, unsigned int index);
+Return: 1 if it succeeded, -1 if it failed
