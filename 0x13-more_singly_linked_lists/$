@@ -1,0 +1,38 @@
+#include "lists.h"
+		if (i == index)
+		if (i == index)
+#include <stdlib.h>
+#include <stddef.h>
+
+
+/**
+ * delete_nodeint_at_index - deletes the node at index 
+ * @head: pointer to the list
+ * @index: n of nth node to be deleted
+ * Return: 1 if it succeeded, -1 if it failed
+ */
+
+int delete_nodeint_at_index(listint_t **head, unsigned int index)
+{
+	listint_t **tmp = head;
+	listint_t *swp, *swp2;
+	unsigned int i;
+
+	for (i = 0; i <= index; i++)
+	{
+		if (i < index || tmp == NULL)
+		{
+			return (-1);
+		}
+		else if (i == index)
+		{	
+			swp = *tmp;
+		}
+	(*tmp) = (*tmp)->next;
+	}
+	swp2 = (*tmp)->next;
+	(*tmp) = swp;
+	(*tmp)->next = swp2;
+	free (*tmp);
+	return (1);
+}
