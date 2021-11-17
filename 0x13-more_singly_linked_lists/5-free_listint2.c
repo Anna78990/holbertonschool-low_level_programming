@@ -14,13 +14,13 @@ listint_t *n = NULL;
 
 if (fr == NULL)
 {
-	return ();
+return;
 }
-while (fr != NULL)
+while (*fr != NULL)
 {
-	n = fr->next;
-	free(fr);
-	fr = n;
+	n = (*fr)->next;
+	free(*fr);
+	*fr = n;
 }
 	*head = NULL;
 }
