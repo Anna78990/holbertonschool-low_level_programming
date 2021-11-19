@@ -34,13 +34,6 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 		}
 		x = m ^ n;
 	}
-/*
-	if (x == m || x == n)
-	{
-		return (1);
-	}
-	else
-*/
 	d = x;
 	while (d > 0)
 	{
