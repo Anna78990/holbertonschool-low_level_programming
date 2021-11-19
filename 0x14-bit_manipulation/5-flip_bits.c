@@ -20,6 +20,16 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 	}
 	else
 	{
+		if (m == ULONG_MAX)
+		{
+			m = m >> 1;
+			n += 1;
+		}
+		else if (n == ULONG_MAX)
+		{
+			n = n >> 1;
+			m += 1;
+		}
 		x = m ^ n;
 	}
 	if (x == m || x == n)
