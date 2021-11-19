@@ -4,7 +4,7 @@
 
 int main(void)
 {
-printf("%d\n", 1 >> 20);
+printf("%d\n", 2048 >> 20);
 printf("%d\n", 19 >> 0);
 printf("%d\n", 10 & 3);
 printf("%d\n", 10 & 4);
