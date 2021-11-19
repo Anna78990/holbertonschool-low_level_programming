@@ -32,7 +32,12 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 		}
 		x = m ^ n;
 	}
-	d = x;
+	if ((x == m || x == n) && (m != 0 && n != 0))
+	{
+		return (1);
+	}
+	else
+		d = x;
 	while (d > 0)
 	{
 		if ((d & 1) == 1)
