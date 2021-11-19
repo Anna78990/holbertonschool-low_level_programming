@@ -15,29 +15,33 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 	unsigned long int x, d, c = 0;
 
 	if (n == m)
-	{
 		return (0);
-	}
+	else if (n == 0)
+		x = m;
+	else if (m == 0)
+		x = n;
 	else
 	{
 		if (m == ULONG_MAX)
 		{
 			m = m >> 1;
-			n = (n + 1) << 1;
+			n = (n << 1) + 1;
 		}
 		else if (n == ULONG_MAX)
 		{
 			n = n >> 1;
-			m = (m + 1) << 1;
+			m = (n << 1) + 1;
 		}
 		x = m ^ n;
 	}
+/*
 	if (x == m || x == n)
 	{
 		return (1);
 	}
 	else
-		d = x;
+*/
+	d = x;
 	while (d > 0)
 	{
 		if ((d & 1) == 1)
