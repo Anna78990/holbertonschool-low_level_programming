@@ -4,7 +4,7 @@
 
 int main(void)
 {
-printf("%ld\n", ULONG_MAX >> 1 ^ 1);
+printf("%d\n", 1 >> 20);
 printf("%d\n", 19 >> 0);
 printf("%d\n", 10 & 3);
 printf("%d\n", 10 & 4);
