@@ -23,12 +23,12 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 		if (m == ULONG_MAX)
 		{
 			m = m >> 1;
-			n += 1;
+			n = (n + 1) << 1;
 		}
 		else if (n == ULONG_MAX)
 		{
 			n = n >> 1;
-			m += 1;
+			m = (m + 1) << 1;
 		}
 		x = m ^ n;
 	}
