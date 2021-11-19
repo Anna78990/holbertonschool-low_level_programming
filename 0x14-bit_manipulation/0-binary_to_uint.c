@@ -24,13 +24,6 @@ unsigned int binary_to_uint(const char *b)
 	{
 		if (b[z] != '0' && b[z] != '1')
 			return (0);
-		else if (z == (n - 1))
-		{
-			if (b[z] == '1')
-				i += 1;
-			else
-				continue;
-		}
 		else if (b[z] == '1')
 			sum += i;
 		else
