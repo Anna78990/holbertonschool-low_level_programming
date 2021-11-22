@@ -28,8 +28,8 @@ rd = read(fd, buf, letters);
 if (rd < 0)
 	return (0);
 buf[letters] = '\0';
-wt = write(STDOUT_FILENO, buf, letters);
-if (wt < 0)
+wt = write(STDOUT_FILENO, buf, rd);
+if (wt < -1)
 	return (0);
 close(fd);
 return (rd);
