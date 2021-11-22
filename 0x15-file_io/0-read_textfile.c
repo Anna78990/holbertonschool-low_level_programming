@@ -19,9 +19,9 @@ ssize_t rd, wt;
 if (filename == NULL)
 	return (0);
 buf = (char *)malloc(letters);
-buf[letters] = '\0';
 if (buf == NULL)
 	return (0);
+buf[letters] = '\0';
 fd = open(filename, O_RDONLY);
 if (fd < 0)
 	return (0);
