@@ -10,22 +10,23 @@
  * Return: the actual number of letters, or 0 otherwise.
  */
 
-ssize_t read_textfile(const char *filename, size_t letters)
+int create_file(const char *filename, char *text_content)
 {
-int fd;
+int fd, rd;
 char *buf;
-size_t rd;
+size_t wt;
 
 buf = (char *)malloc(letters);
-if (buf == NULL)
-	return (0);
+
 if (filename == NULL)
-	return (0);
-fd = open(filename, O_RDONLY);
+	return (-1);
+fd = open(file, O_RDWD|O_CREAT|O_TRUNC, 0666);
 if (fd < 0)
 	return (0);
 rd = read(fd, buf, letters);
-write(STDOUT_FILENO, buf, letters);
+wt = write(STDOUT_FILENO, buf, letters);
+if (wt < letters)
+	return (0);
 close(fd);
 return (rd);
 }
