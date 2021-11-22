@@ -21,13 +21,13 @@ if (filename == NULL)
 buf = (char *)malloc(letters);
 if (buf == NULL)
 	return (0);
-buf[letters] = '\0';
 fd = open(filename, O_RDONLY);
 if (fd < 0)
 	return (0);
 rd = read(fd, buf, letters);
 if (rd < 0)
 	return (0);
+buf[letters] = '\0';
 wt = write(STDOUT_FILENO, buf, letters);
 if (wt < 0)
 	return (0);
