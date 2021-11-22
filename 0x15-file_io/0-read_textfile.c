@@ -29,7 +29,7 @@ if (rd < 0)
 	return (0);
 buf[letters] = '\0';
 wt = write(STDOUT_FILENO, buf, rd);
-if (wt < -1)
+if (wt != rd)
 	return (0);
 close(fd);
 return (rd);
