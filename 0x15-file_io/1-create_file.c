@@ -12,8 +12,7 @@
 
 int create_file(const char *filename, char *text_content)
 {
-int fd, i, z, wt;
-char *buf;
+int fd, i, wt;
 
 if (filename == NULL)
 	return (-1);
@@ -21,19 +20,17 @@ if (text_content != NULL)
 {
 	for (i = 0; text_content[i]; i++)
 		;
-	buf  = (char *)malloc(i);
-	for (z = 0; z <= i; z++)
-		buf[z] = text_content[z];
 }
 else
 {
 	text_content = "";
+	for (i = 0; text_content[i]; i++)
+		;
 }
 fd = open(filename, O_RDWR | O_CREAT | O_TRUNC, 0600);
 if (fd < 0)
 	return (-1);
-if (text_content != NULL)
-	wt = write(fd, buf, i);
+wt = write(fd, text_content, i);
 if (wt < 0)
 	return (-1);
 close(fd);
