@@ -29,6 +29,9 @@ else
 		;
 }
 fd = open(filename, O_APPEND | O_WRONLY);
+if (fd < 0)
+	return (-1);
 write(fd, text_content, i);
+close(fd);
 return (1);
 }
