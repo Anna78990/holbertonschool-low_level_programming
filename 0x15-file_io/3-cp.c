@@ -19,6 +19,7 @@ int main(int ac, char **av)
 	{
 		dprintf(2, "Usage: cp file_from file_to\n");
 		exit(97);
+		return (0);
 	}
 	fdr = open(av[1], O_RDONLY);
 	rd = read(fdr, buf, 1024);
@@ -26,6 +27,7 @@ int main(int ac, char **av)
 	{
 		dprintf(2, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
+		return (0);
 	}
 	fdw = open(av[2], O_RDWR | O_CREAT | O_TRUNC, 0664);
 	wt = write(fdw, buf, rd);
@@ -33,12 +35,14 @@ int main(int ac, char **av)
 	{
 		dprintf(2, "Error: Can't write to file %s\n", av[2]);
 		exit(99);
+		return (0);
 	}
 	clr = close(fdr);
 	if (clr < 0)
 	{
 		dprintf(2, "Error: Can't close fd %d\n", fdr);
 		exit(100);
+		return (0);
 	}
 	clw = close(fdw);
 	if (clw < 0)
