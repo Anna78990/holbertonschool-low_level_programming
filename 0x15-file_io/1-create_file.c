@@ -25,10 +25,15 @@ if (text_content != NULL)
 	for (z = 0; z <= i; z++)
 		buf[z] = text_content[z];
 }
+else
+{
+	text_content = "";
+}
 fd = open(filename, O_RDWR | O_CREAT | O_TRUNC, 0600);
 if (fd < 0)
 	return (-1);
-wt = write(fd, buf, i);
+if (text_content != NULL)
+	wt = write(fd, buf, i);
 if (wt < 0)
 	return (-1);
 close(fd);
