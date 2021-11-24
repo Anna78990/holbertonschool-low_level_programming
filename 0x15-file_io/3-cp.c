@@ -22,12 +22,12 @@ int main(int ac, char **av)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]), exit(98);
 	fdw = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (fdw == -1)
-		dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", av[2]), exit(99);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]), exit(99);
 	while ((rd = read(fdr, buf, BUFSIZ)) > 0)
 	{
 		wt = write(fdw, buf, rd);
 		if (rd != wt || wt == -1)
-			dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", av[2]), exit(99);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]), exit(99);
 	}
 	if (rd == -1)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]), exit(98);
