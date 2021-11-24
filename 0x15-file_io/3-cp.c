@@ -13,7 +13,7 @@
 int main(int ac, char **av)
 {
 	int fdr, fdw, rd, wt, clr, clw;
-	char buf[5000];
+	char buf[1024];
 
 	if (ac != 3)
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
@@ -21,10 +21,12 @@ int main(int ac, char **av)
 	if (fdr < 0)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]), exit(98);
 	fdw = open(av[2], O_RDWR | O_CREAT | O_TRUNC, 0664);
+	if (fdw < 0)
+		dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", av[2]), exit(99);
 	while ((rd = read(fdr, buf, 1024)) > 0)
 	{
 		wt = write(fdw, buf, rd);
-		if (fdw < 0 || wt < 0)
+		if (rd != wt || wt < 0)
 			dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", av[2]), exit(99);
 	}
 	if (rd < 0)
