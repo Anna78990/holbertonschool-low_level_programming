@@ -20,7 +20,7 @@ int main(int ac, char **av)
 	fdr = open(av[1], O_RDONLY);
 	if (fdr == -1)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]), exit(98);
-	fdw = open(av[2], O_RDWR | O_CREAT | O_TRUNC, 0664);
+	fdw = open(av[2], O_RDONLY | O_CREAT | O_TRUNC, 0664);
 	if (fdw == -1)
 		dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", av[2]), exit(99);
 	while ((rd = read(fdr, buf, 1024)) > 0)
@@ -36,6 +36,6 @@ int main(int ac, char **av)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fdr), exit(100);
 	clw = close(fdw);
 	if (clw == -1)
-		dprintf(2, "Error: Can't close fd %d\n", fdw), exit(100);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fdw), exit(100);
 	return (0);
 }
