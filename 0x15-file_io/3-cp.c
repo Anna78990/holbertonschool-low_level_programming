@@ -13,7 +13,7 @@
 int main(int ac, char **av)
 {
 	int fdr, fdw, rd, wt, clr, clw;
-	char buf[1024];
+	char buf[BUFSIZ];
 
 	if (ac != 3)
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
@@ -23,7 +23,7 @@ int main(int ac, char **av)
 	fdw = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (fdw == -1)
 		dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", av[2]), exit(99);
-	while ((rd = read(fdr, buf, 1024)) > 0)
+	while ((rd = read(fdr, buf, BUFSIZ)) > 0)
 	{
 		wt = write(fdw, buf, rd);
 		if (rd != wt || wt == -1)
