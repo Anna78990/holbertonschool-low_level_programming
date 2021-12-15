@@ -1,7 +1,6 @@
 #include "main.h"
 #include <math.h>
 
-/* more headers goes there */
 /**
 * times_table - prints the 9 times tabl
 * Return: Nothing
