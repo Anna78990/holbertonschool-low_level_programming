@@ -26,10 +26,10 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 		*head = new;
 		return (new);
 	}
-	new->prev = *head;
 	temp = *head;
 	while (temp->next)
 		temp = temp->next;
 	temp->next = new;
+	new->prev = temp;
 	return (new);
 }
