@@ -1,24 +1,30 @@
+#include <stddef.h>
 #include "lists.h"
 #include <stdlib.h>
-#include <stddef.h>
 
 
 /**
- * get_nodeint_at_index - returns the nth node of a listint_t linked list.
+ * sum_dlistint - returns the sum of all the node data(n).
  * @head: pointer to the linked list
- * @index: n of nth node
- * Return: the nth node, if it does not exist, return NULL.
+ * Return: the sum of all the data, if it is empty, return NULL.
  */
 
-listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
+int sum_dlistint(dlistint_t *head)
 {
-	unsigned int i;
+	int sum = 0;
 
-	for (i = 1; i <= index; i++)
+	if (head == NULL)
 	{
-		if (head == NULL)
-			return (NULL);
+		return (sum);
+	}
+	else
+	{
+	while (head != NULL)
+	{
+		sum += head->n;
 		head = head->next;
 	}
-	return (head);
+	return (sum);
+	}
 }
+
