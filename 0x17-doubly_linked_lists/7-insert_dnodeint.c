@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stddef.h>
 #include "lists.h"
 #include <stdlib.h>
@@ -24,6 +25,8 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	{
 		new->next = tmp;
 		*h = new;
+		new->prev = NULL;
+		tmp->prev = new;
 	}
 	else
 	{
