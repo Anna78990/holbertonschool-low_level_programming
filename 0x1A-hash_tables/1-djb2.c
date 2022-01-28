@@ -1,6 +1,6 @@
 /**
  * hash_djb2 - implementing the djb2 algorithm.
- *
+ * @str: string to refer
  * Return: value of hash
  */
 
