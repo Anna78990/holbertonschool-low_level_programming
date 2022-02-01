@@ -1,3 +1,4 @@
+#include "hash_tables.h"
 /**
  * key_index - give the index of a key
  * @key: key to search
@@ -7,8 +8,5 @@
 
 unsigned long int key_index(const unsigned char *key, unsigned long int size)
 {
-	for (i = 0; i <= size; i++)
-	{
-		
-	}
+	return (hash_djb2(key) % size);
 }
