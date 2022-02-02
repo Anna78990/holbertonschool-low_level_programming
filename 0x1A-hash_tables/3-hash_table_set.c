@@ -19,7 +19,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	idx = key_index((const unsigned char *)key, ht->size);
 	pin = ht->array[idx];
-	while (pin)
+	while (pin != NULL)
 	{
 		if (pin->key == key)
 		{
