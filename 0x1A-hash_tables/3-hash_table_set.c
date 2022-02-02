@@ -12,7 +12,8 @@
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *el, *pin;
+	hash_node_t *el = NULL;
+	hash_node_t *pin = NULL;
 	unsigned long int idx;
 
 	if (ht == NULL || key == NULL || value == NULL)
