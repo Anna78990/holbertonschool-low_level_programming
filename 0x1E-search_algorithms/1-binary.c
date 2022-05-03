@@ -12,13 +12,13 @@
 
 int binary_search(int *array, size_t size, int value)
 {
-	int imin = array[0];
-	int isize = (int)size - 1;
-	int imax = array[isize];
-	int i;
+	int imin, isize, imax, i;
 
 	if (array == NULL)
 		return (-1);
+	imin = array[0];
+	isize = (int)size - 1;
+	imax = array[isize];
 	printf("Searching in array: ");
 		for (i = 0; i < (int)size; i++)
 		{
@@ -27,6 +27,13 @@ int binary_search(int *array, size_t size, int value)
 			printf("%d", array[i]);
 		}
 		printf("\n");
+	if (size == 1)
+	{
+		if (array[0] == value)
+			return (0);
+		else
+			return (-1);
+	}
 	return (binary_search_rec(array, value, imin, imax, (int)size));
 }
 
@@ -68,13 +75,12 @@ int binary_search_rec(int *ary, int key, int imin, int imax, int size)
 			printf("Searching in array: ");
 			for (i = imid; ary[i] <= imax; i++)
 			{
-				if (i <= size)
-				{
-					if (i > imid + 1)
-						printf(", ");
-					if (i > imid)
-						printf("%d", ary[i]);
-				}
+				if (i >= size)
+					break;
+				if (i > imid + 1)
+					printf(", ");
+				if (i > imid)
+					printf("%d", ary[i]);
 			}
 			printf("\n");
 		}
